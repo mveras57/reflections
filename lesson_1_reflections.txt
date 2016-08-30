@@ -1,0 +1,105 @@
+1- How did viewing a diff between two versions of a file help you see the bug 
+that was introduced?
+
+The time spent looking in the files without tools like diff is much longer
+and errors prone.
+
+
+2- How could having easy access to the entire history of a file make you
+a more efficient programmer in the long term?
+
+".. easy access to the entire history of a file" means repository in a
+Version Control system, and it speeds up the job done by a programmer 
+because they frequently introduce bugs in the programs and need to correct 
+them fast.
+  
+
+3- What do you think are the pros and cons of manually choosing when to
+create a commit, like you do in Git, vs having versions automatically
+saved, like Google Doc does?
+
+Obviously the main reason for doing manually commits is the possibility of
+attaching a description to the commit. Doing that we can go back and search 
+for the right code we want to retrieve and debug, probably because we 
+introduced some bug before doing that commit. On the other hand, if we wait
+to much to do a commit, it becomes difficult to find the right spot to 
+maintain.
+
+
+2016/06/14
+
+4 - Why do you think some version control systems, like Git, allow saving
+    multiple files in one commit, while others, like Google Docs, treat each
+    file separately?
+
+Because Git is used for Code, which has to be treated as a unit in order to
+be compiled. Google Docs maintains files which are independent from each one.
+
+
+2016/06/15
+
+5 - How can you use the commands git log and git diff to view the history of files?
+
+Using git log we can see all the commits that have been done, each one with a
+description. Choosing a description, we can then execute git diff to compare two
+distinct commits and know exactly what we did to a file in some precise moment.
+
+
+6 - How might using version control make you more confident to make changes that
+    could break something?
+
+Since I can go back to restore the version that was not broke and discover what
+caused the problem, I can alter the code again without introducing that bug. With
+version control system I can repeat that procedure anytime I want. But one can
+become addicted to the process, leaving to Git the chore of thinking carefully
+before making some changes into code.
+
+
+7 - Now that you have your workspace set up, what do you want to try using Git
+    for?
+
+Well, I think that the course will follow with "asteroids".
+
+
+
+
+
+ID of the most recent commit in the repository pappu-pakia
+fa4c6bade4970c282b3870ad16f1bde8164663a9
+
+
+June 28, 2016
+Finished Lesson 1.
+Beginning Lesson 2. Udacity suggest 4 hours to complete.
+
+
+
+Stopped in the end of  4/35 of Lesson 2.
+
+
+
+
+OBSERVATIONS:
+
+1 - git diff uses 2 parameters: older commit then the younger one
+
+
+2 - HEAD is the currently working commit (the most recent). With the
+command git checkout with a commit-id older than the head, we will receive
+a warning message. Until I discover a more intelligent way of doing that
+without loosing everything I did after this commit-id, I will annotate the last
+commit-id in the tree (head) in order to restore my work after investigating that
+older commit-id.
+
+3 - git clone not only copies a directory, bat also the metadata of git 
+associated with that data. To create a new repository use git init. But
+don't forget to do a git commit, because git only created the repository. He
+didn't committed the first version.
+
+4 - another git command: git status
+
+
+
+
+
+
