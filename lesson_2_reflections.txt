@@ -1,0 +1,45 @@
+1 - What happens when you initialize a repository? Why do you need to do it?
+
+A new hidden directory is created with metadata that git will use to annotate
+all the information it needs in order to track the changes to the files that
+leaves in the directory.
+
+
+2 - How is the Staging Area different from the Working Directory and the
+	Repository?
+
+Well, the staging area are the first step before a complete "commit", so
+it is not a repository neither a working directory because the files in
+the working directory can be altered by user and the staging area can't.
+
+
+
+
+
+
+Stopped in: the beginning of 7/35 in Lesson 2
+
+
+
+Observations:
+- there is an "Staging area" where git put the files that are "added". It is
+  not the commit yet, but an initial step which I still don't complete
+  understand. The command "git reset file_name" is used to extract the file
+  that has been incorrectly "added" to the Staging Area.
+
+- git clone not only copies a directory, bat also the metadata of git 
+associated with that data. To create a new repository use git init. But
+don't forget to do a git commit, because git only created the repository. He
+didn't committed the first version.
+
+- "git reset" extracts from Staging Area as if the file was never there. I have
+  been using: git rm -f --cached filename
+
+- Simple summary:
+	git add (put the file in the staging area)
+	git commit (now the file is in the repository; editor opens to write
+		comment)
+	git status
+	git log
+
+
