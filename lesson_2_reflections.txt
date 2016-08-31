@@ -10,14 +10,17 @@ leaves in the directory.
 
 Well, the staging area are the first step before a complete "commit", so
 it is not a repository neither a working directory because the files in
-the working directory can be altered by user and the staging area can't.
+the working directory can be altered by user and the staging area can't. Some
+videos later I discovered that we can compare the content of a file between
+working directory AND staging area and between staging area AND repository.
+But I still don't understand why things are this way.
 
 
 
 
 
 
-Stopped in: the beginning of 7/35 in Lesson 2
+Stopped in: the beginning of 11/35 in Lesson 2
 
 
 
@@ -41,5 +44,10 @@ didn't committed the first version.
 		comment)
 	git status
 	git log
+	git diff without parameters compares working directory and staging area
+	git diff --staged compares between staging area and repository
+	git reset --hard - discards modifications in staging area and working
+					   directory. BE VERY CAREFULL WITH THIS
+
 
 
