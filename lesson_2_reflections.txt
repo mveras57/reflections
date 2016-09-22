@@ -14,13 +14,159 @@ the working directory can be altered by user and the staging area can't. Some
 videos later I discovered that we can compare the content of a file between
 working directory AND staging area and between staging area AND repository.
 But I still don't understand why things are this way.
+2016/09/19 - now I think I understood the reason, and the answer may be in the
+video "Quiz: git diff Revisited" from Lesson 2: I can use "git add" to put
+files in the staging area before making a commit because all the files in the
+final commit will be related to some bug correction, so the files will go to
+the staging area while the programmer is trying to detect and correct the bug.
+
+2016/09/19 - I am now in the video Quiz: git diff revisited and the instructor
+is returning to the Asteroids program. Since I will probably have to alter
+some code here, I am storing the HEAD of the repository:
+3884eab839af1e82c44267484cf2945a766081f3
+
+In this video I will have to checkout the following commit:
+25ede836903881848fea811df5b687b59d962da3
+After comparing a older version with this version, I discovered that the 
+following line was removed:
+this.delayBeforeBullet = 10;
+
+so, I have to reintroduce it just after the line:
+if (KEY_STATUS.space) {
+	if (this.delayBeforeBullet <= 0) {
+==> insert here..
+
+Done. The game is correct again. Now I will do: git add game.js .. ok
+The instructor also wanted that I make change in index.html but don't
+put in the staging area in order to see the differences between the
+commands: git diff (working directory and staging area) and git diff
+--staged (between staging area and repository). At the end of the
+exercise, I discarded the modification in index.html executing the
+extremely dangerous command git reset --hard.
+But there is still a problem: where is the old HEAD 3884eab? Well, it
+is now next to the new HEAD, 311d11, which is the one that I've just
+created.
+
+
+2016/09/20
+
+3 - How can you use the staging area to make sure you have one commit
+per logical change?
+
+In the beginning of maintenance of code, we aren't sure about which
+code files have to be maintained in order to correct the program. So we
+start to alter code files and putting them in the staging area until we
+become confident that the bug is not present anymore. Then we can make
+a single commit that include all the necessary corrections that were
+necessary to eliminate the bug or to introduce a new feature.
+
+
+More two commands to git:
+	git branch - exhibits the name of the branches there are
+	git branch new-name - creates a new branch
+	git checkout name-of-branch - checks out that branch
+
+
+4 - What are some situations when branches would be helpful in keeping
+your history organized? How would branches help?
+When introducing new features and until they are functioning perfectly;
+trying something different but leaving the master untouched; changing
+the locale of the program until we are confidant that everything is
+correct. We can also have two important branches: master branch, where
+production code stays, and the development branch, where we are 
+introducing new features and correcting old ones.
+Even if we are boring to do something, we can let that branch intact
+try a different one.
+Branches would help because we can continue fixing the bugs in the
+master branch without conflict with the new features.
+
+A BRANCH is simply a LABEL that is attributed to a commit.
+
+The "tip of a branch" is the last commit in that branch.
+
+We can have two Labels in a single commit. If one of the commits is
+checkout, and we make a commit, just that label advances one generation
+while the other stays behind.
+
+
+Now I understand a little more about "git checkout". I can checkout
+branches, which I think is more common, or checkout commits. In this
+case, I have to save the commit id of the HEAD in order to checkout
+it again if I discard the work I done with the checkout commit.
+
+It is so common, when creating a new feature, create a new branch and
+checking it out, that there exist a command to do so:
+
+	git checkout -b new-branch-name
+
+
+2016/09/22
+
+5 - How do the diagrams help you visualize the branch structure?
+We can not only see the existing branches, but also the sequence of 
+commits backward toward the root. Knowing the branches allows us to
+avoid creating commits in parts of the tree that will be lost in case
+we forget and make a commit in an existing branch.
+
+
+
+When combining two branches, the important thing to remember is that we
+aren't just combining two commits, but ALL the commits that are between
+the two HEADs and the commit that belongs to both branches. The most
+important thing here is that we can checkout any of the older versions
+in EACH branch in order to correct some introduced bug. In the case of
+this course, after merging the 2 branches, we can delete the label
+coins (be careful, just delete the LABEL and not the entire branch)
+
+
+
+Today I made some mistake and put my repository in such situation that
+I couldn't make a merge in the video "Merging on the command line". 
+Since I couldn't find a way of correcting my mistake, I deleted all the
+repository Asteroids and did "git clone" again. But than I discovered 
+that the branch "Coins" had disappeared. I had to return to the very
+beginning of Lesson 1 trying to find how that branch had been created.
+In the video "Branches for Collaboration" I discovered that it is a
+"Remote Branch" and they will explain in future videos what the hack 
+this is. So, in order to continue my videos, I had to use the command:
+"git checkout coins", even though I couldn't the "coins" in the list of
+branches. The message displayed by this command says: 
+	
+	Branch coins set up to track REMOTE BRANCH COINS from origin.
+
+I think that the branch coins in my machine will be "watching" the 
+remote branch coins in GitHub, but I am not sure.
+
+After watching more videos I finally reached the point where I couldn't
+make a MERGE of the coins and master branches. Now it worked.
+
+Since the master branch was checked out before the merge, it will be
+that label (master) that will point to the new commit (which combines
+the 2 branches merged).
+
+After the merge, the commits are organized by time stamp, rather than
+the original organization inside each branch. So, If now we wanted to 
+see the differences between 2 commits, but each one came from a 
+different branch before merge, we would see a lot of differences. To
+solve this, git has another command:
+
+	git show commit-id
+
+After the merge we can delete the Label coins with the command:
+
+	git branch -d coins
 
 
 
 
 
 
-Stopped in: the beginning of 11/35 in Lesson 2
+
+
+Stopped in: the end of 25/35 in Lesson 2 - Merging on the comm..
+	I succeeded in changing the color of the coins; I didn't added the
+	file game.js to the staging area.
+ 
 
 
 
@@ -30,7 +176,7 @@ Observations:
   understand. The command "git reset file_name" is used to extract the file
   that has been incorrectly "added" to the Staging Area.
 
-- git clone not only copies a directory, bat also the metadata of git 
+- git clone not only copies a directory, but also the metadata of git 
 associated with that data. To create a new repository use git init. But
 don't forget to do a git commit, because git only created the repository. He
 didn't committed the first version.
@@ -38,16 +184,33 @@ didn't committed the first version.
 - "git reset" extracts from Staging Area as if the file was never there. I have
   been using: git rm -f --cached filename
 
+- useful information about the CRLF problem between Windows and Mac
+  or Linux: 
+ttps://help.github.com/articles/dealing-with-line-endings/#platform-all
+
 - Simple summary:
 	git add (put the file in the staging area)
 	git commit (now the file is in the repository; editor opens to write
 		comment)
 	git status
-	git log
+	git log (display all the commits that have been done in the files of the
+			 directory)
 	git diff without parameters compares working directory and staging area
 	git diff --staged compares between staging area and repository
 	git reset --hard - discards modifications in staging area and working
 					   directory. BE VERY CAREFULL WITH THIS
+	HEAD (the current commit; the last commit that has been done)
+	git branch - exhibits the name of the branches there are
+	git branch new-name - creates a new branch
+	git log --graph --oneline names-of-the-branchs  - tree of branches
+	git checkout name-of-branch - checks out that branch
+	git checkout -b new-branch-name - crates a new branch and check it
+		out
+	git show commit-id - show the differences between a commit and its
+		ancestor in the branch line from where it came from after a 
+		merge
+	git branch -d coins - deletes the label of a branch, typically
+		after a merge of the branch into another branch
 
 
 

@@ -91,12 +91,23 @@ without loosing everything I did after this commit-id, I will annotate the last
 commit-id in the tree (head) in order to restore my work after investigating that
 older commit-id.
 
+2.5 - "git checkout commit-id" is in fact just a way of obtaining 
+a certain version (or commit) of a branch of our code. But in the 
+future we will have branches and the git checkout with a commit id will
+be of less use. I am advancing a litlle, but in the case I make a 
+checkout with a commit id, poke around the code, and want to discard
+any changes, I just have to do a "git checkout master" and I will be
+with my tree of commits preserved.
+
+
 3 - git clone not only copies a directory, bat also the metadata of git 
 associated with that data. To create a new repository use git init. But
 don't forget to do a git commit, because git only created the repository. He
 didn't committed the first version.
 
 4 - another git command: git status
+
+5 - Repository of Asteroids: https://github.com/udacity/asteroids.git
 
 
 
