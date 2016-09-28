@@ -129,8 +129,8 @@ beginning of Lesson 1 trying to find how that branch had been created.
 In the video "Branches for Collaboration" I discovered that it is a
 "Remote Branch" and they will explain in future videos what the hack 
 this is. So, in order to continue my videos, I had to use the command:
-"git checkout coins", even though I couldn't the "coins" in the list of
-branches. The message displayed by this command says: 
+"git checkout coins", even though I couldn't see the "coins" in the 
+list of branches. The message displayed by this command says: 
 	
 	Branch coins set up to track REMOTE BRANCH COINS from origin.
 
@@ -157,15 +157,61 @@ After the merge we can delete the Label coins with the command:
 	git branch -d coins
 
 
+2016/09/23
+
+6 - What is the result of merging two branches together? Why do we
+represent it in the diagram the way we do?
+
+Every commit in each branch will be reached by a single label, the one
+that was checked out before the merge command. I think the way we
+represent the merge, using branches of a tree, helps to see that a 
+simple git diff id id sometimes will not represent the real 
+differences between versions, since each node may have came from 
+different history of coding, for example, "coins" and "master". In that
+case, we can use the command "git show commit-id" which will show the
+differences between 2 versions of a branch before the merge.
+
+
+2016/09/25
+
+Today we will have MASTER commits included in EASY-MODE branch. In
+order to do that we must have easy-mode checked out.
+There is a new function that does what that part of the code did. The
+part where we changed to 2 splits instead of 3. Since the new function
+is in MASTER branch, I decided for leaving the function, eliminating 
+the older version of the code, and since I am in EASY-MODE branch, used
+a 2 to the number of asteroids after a hit.
+In order to resolve the conflict, we must do a "git add game.js" and a
+"git commit".
+
+
+
+2016/09/28
+In the video Quiz: Committing the Confli..., I had to inform Udacity
+the result of the command: "git log -n 1" in which I see the result
+of the merging and the conflict solution. But my log only show the
+message about the merge. I don't remember if I deleted the part of
+the conflict resolution.
+
+
+7 - What are the pros and cons of Git's automatic merging vs. always
+doing merges manually?
+
+In simple modifications of the code, I think that automatic merging is
+best because you don't waste time reviewing perfectly know code. But
+when the complexity of the commit, for example, complex merging, is 
+more then git can handle or the programmer feels need of reviewing the
+code, manual merge can be advantageous. But I am not sure if I can do a
+manual merge.
 
 
 
 
 
 
-Stopped in: the end of 25/35 in Lesson 2 - Merging on the comm..
-	I succeeded in changing the color of the coins; I didn't added the
-	file game.js to the staging area.
+
+Stopped in: the end of 31/35 in Lesson 2 - Quiz: Committing the Confli...
+
  
 
 
