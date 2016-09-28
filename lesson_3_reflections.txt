@@ -1,0 +1,18 @@
+lesson_3_reflections.txt
+
+
+2016/09/28
+
+Beginning Lesson 3
+
+In this lesson I will have to make several changes to a github
+repository. So I had to verify that credential-osxkeychain was 
+installed alongside git. This was ok.
+Then I had to run the command:
+
+	"git config --global credential.helper osxkeychain"
+
+This will allow that my password in git be send whitout asking
+everytime I make any change to a remote repository. It will ask only
+the first time and saves it in the keychain.
+
