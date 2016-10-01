@@ -12,7 +12,21 @@ Then I had to run the command:
 
 	"git config --global credential.helper osxkeychain"
 
-This will allow that my password in git be send whitout asking
+This will allow that my password in git be sent whitout asking
 everytime I make any change to a remote repository. It will ask only
-the first time and saves it in the keychain.
+when I clone a repository that requires password.
+
+
+
+
+October 1st, 2016
+
+
+
+
+
+
+Stopped in: 3/34 - Creating a GitHub account.
+
+
 
