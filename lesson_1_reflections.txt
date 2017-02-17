@@ -109,6 +109,10 @@ didn't committed the first version.
 
 5 - Repository of Asteroids: https://github.com/udacity/asteroids.git
 
+6 - Each Commit "saves" all the files in the repository, even if some of
+    them didn't change since the last Commit; I AM NOT SURE ABOUT THAT!
+    
+
 
 
 

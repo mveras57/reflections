@@ -239,6 +239,8 @@ ttps://help.github.com/articles/dealing-with-line-endings/#platform-all
 	git add (put the file in the staging area)
 	git commit (now the file is in the repository; editor opens to write
 		comment)
+		Commits are meaningful "check-points" of content; can be a bug 
+		correction, a new implementation or change in documentation.
 	git status
 	git log (display all the commits that have been done in the files of the
 			 directory)

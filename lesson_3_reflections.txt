@@ -21,6 +21,10 @@ when I clone a repository that requires password.
 
 October 1st, 2016
 
+- Continuing creating a project in GitHub; using commands:
+	git remote (to see if there is a remote repository)
+	git remote add origin URL (to link reflections with GitHub)
+
 
 
 
