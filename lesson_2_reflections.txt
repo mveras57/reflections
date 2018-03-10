@@ -57,7 +57,7 @@ In the beginning of maintenance of code, we aren't sure about which
 code files have to be maintained in order to correct the program. So we
 start to alter code files and putting them in the staging area until we
 become confident that the bug is not present anymore. Then we can make
-a single commit that include all the necessary corrections that were
+a single commit that include all the corrections that were
 necessary to eliminate the bug or to introduce a new feature.
 
 
@@ -75,8 +75,8 @@ the locale of the program until we are confidant that everything is
 correct. We can also have two important branches: master branch, where
 production code stays, and the development branch, where we are 
 introducing new features and correcting old ones.
-Even if we are boring to do something, we can let that branch intact
-try a different one.
+Even if we are bored to do something, we can let that branch intact
+and try a different one.
 Branches would help because we can continue fixing the bugs in the
 master branch without conflict with the new features.
 
@@ -85,14 +85,14 @@ A BRANCH is simply a LABEL that is attributed to a commit.
 The "tip of a branch" is the last commit in that branch.
 
 We can have two Labels in a single commit. If one of the commits is
-checkout, and we make a commit, just that label advances one generation
+checked out, and we make a commit, just that label advances one generation
 while the other stays behind.
 
 
 Now I understand a little more about "git checkout". I can checkout
 branches, which I think is more common, or checkout commits. In this
 case, I have to save the commit id of the HEAD in order to checkout
-it again if I discard the work I done with the checkout commit.
+it again if I discard the work I've done with the checkout commit.
 
 It is so common, when creating a new feature, create a new branch and
 checking it out, that there exist a command to do so:
