@@ -1,0 +1,1 @@
+This file was created in order to follow Udacity's Lesson 4 of GitHub course.
