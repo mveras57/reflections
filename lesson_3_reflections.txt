@@ -59,3 +59,6 @@ When would you want to use a remote repository rather than keeping all your work
 News commands:
 
 	git push origin master		- send all the commits from branch master to the 								remote in GitHub repository pointed to by origin.
+
+	git pull origin master		- the reverse of the previous command.
+
