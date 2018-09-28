@@ -23,7 +23,7 @@ October 1st, 2016
 
 - Continuing creating a project in GitHub; using commands:
 	git remote (to see if there is a remote repository)
-	git remote add origin URL (to link reflections with GitHub)
+	git remote add origin URL (to link reflections with GitHub, using HTTPS)
 
 
 September 28th, 2018
@@ -31,6 +31,15 @@ September 28th, 2018
 
 - Beginning Lesson 4 - Item 1
 
+- I had connected my local repository to GitHub and I didn't remember. Since I returned to the beginning of Lesson 4, I did a new Push, with the command:
+	
+	git push origin master
+
+where origin is the name of the remote repository in GitHub.
+
+- There is a similar command (git log) in GitHub, accessible by the button Commits, but shows the commits in GitHub instead of the local commits;
+
+- I have to create a new file directly in GitHub in order to see what will happen in my local repository; creating an garbage_file.txt;
 
 
 
@@ -38,3 +47,15 @@ Stopped in: 3/34 - Creating a GitHub account.
 
 
 
+Reflections:
+
+When would you want to use a remote repository rather than keeping all your work local?
+	
+	Remote repository is better when there is a cooperative work on something by several people.
+
+
+
+
+News commands:
+
+	git push origin master		- send all the commits from branch master to the 								remote in GitHub repository pointed to by origin.
