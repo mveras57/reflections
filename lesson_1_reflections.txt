@@ -19,7 +19,8 @@ create a commit, like you do in Git, vs having versions automatically
 saved, like Google Doc does?
 
 Obviously the main reason for doing manually commits is the possibility of
-attaching a description to the commit. Doing that we can go back and search 
+attaching a description to the commit, especially during an important fase
+of creating or correcting software. Doing that we can go back and search 
 for the right code we want to retrieve and debug, probably because we 
 introduced some bug before doing that commit. On the other hand, if we wait
 to much to do a commit, it becomes difficult to find the right spot to 
@@ -73,6 +74,18 @@ Finished Lesson 1.
 Beginning Lesson 2. Udacity suggest 4 hours to complete.
 
 
+September 28, 2018
+Comming back to Git/Github because:
+1. Udacity recommends using Github in every project; especially when sending projects to review;
+2. Even working alone, I have trouble with controlling versions of my experimentations;
+
+I found the path to iCloud drive, where I put my code:
+/Users/marco/Library/Mobile\ Documents/com~apple~CloudDocs/
+
+
+
+
+
 
 Stopped in the end of  4/35 of Lesson 2.
 
@@ -94,7 +107,7 @@ older commit-id.
 2.5 - "git checkout commit-id" is in fact just a way of obtaining 
 a certain version (or commit) of a branch of our code. But in the 
 future we will have branches and the git checkout with a commit id will
-be of less use. I am advancing a litlle, but in the case I make a 
+be of less use. I am advancing a little, but in the case I make a 
 checkout with a commit id, poke around the code, and want to discard
 any changes, I just have to do a "git checkout master" and I will be
 with my tree of commits preserved.
@@ -102,7 +115,7 @@ with my tree of commits preserved.
 
 3 - git clone not only copies a directory, bat also the metadata of git 
 associated with that data. To create a new repository use git init. But
-don't forget to do a git commit, because git only created the repository. He
+don't forget to do a git commit, because git init only created the repository. He
 didn't committed the first version.
 
 4 - another git command: git status

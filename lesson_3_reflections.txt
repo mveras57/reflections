@@ -12,8 +12,8 @@ Then I had to run the command:
 
 	"git config --global credential.helper osxkeychain"
 
-This will allow that my password in git be sent whitout asking
-everytime I make any change to a remote repository. It will ask only
+This will allow that my password in git be sent without asking
+every time I make any change to a remote repository. It will ask only
 when I clone a repository that requires password.
 
 
@@ -26,6 +26,10 @@ October 1st, 2016
 	git remote add origin URL (to link reflections with GitHub)
 
 
+September 28th, 2018
+- Coming back to Udacity course on Git and GitHub; 
+
+- Beginning Lesson 4 - Item 1
 
 
 
